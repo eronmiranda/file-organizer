@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FileWatcherOrganizer/1.0.0": {
+        "runtime": {
+          "FileWatcherOrganizer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FileWatcherOrganizer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
