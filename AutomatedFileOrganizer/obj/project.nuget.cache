@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tZvg0NQIHTGYT2OhFnqJO7CbhTy5rbzmo62UdM55D0hHDHjmEZOjLtV70K6sa1PjM6jbv9hIFN1gW59PPDcXlA==",
+  "dgSpecHash": "fIIwDpg2gRi7suRYfkGyKAa/6/QpghxSlu221NG4EkKN/xtgRK/aOIGwiykx9yVkKe3gwvy0BePsnVtkCCEDzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\AutomatedFileOrganizer.csproj",
+  "projectFilePath": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\FileWatcherOrganizer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

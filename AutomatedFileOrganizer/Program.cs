@@ -32,9 +32,10 @@ using (FileSystemWatcher watcher = new FileSystemWatcher(watchPath))
 
 void OnCreated(object sender, FileSystemEventArgs e)
 {
-    Console.WriteLine("Found a new file");
-    string watchFilePath = e.FullPath;
 
+    string watchFilePath = e.FullPath;
+    // Notifies if it founds a new file.
+    Console.WriteLine($"Found a new file: {Path.GetFileName(e.FullPath)}");
     // Ignore '.'
     string extension = Path.GetExtension(watchFilePath);
     extension = String.IsNullOrEmpty(extension) ? extension : extension.Substring(1);
@@ -43,6 +44,7 @@ void OnCreated(object sender, FileSystemEventArgs e)
     {
         MoveFile(watchFilePath, organizedSubPaths[extension.ToLower()], extension);
     }
+    // Notifies if the file move was successful.
     Console.WriteLine($"File has been moved to {organizedPath}");
 }
 

@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\AutomatedFileOrganizer.csproj",
-      "projectName": "AutomatedFileOrganizer",
-      "projectPath": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\AutomatedFileOrganizer.csproj",
+      "projectUniqueName": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\FileWatcherOrganizer.csproj",
+      "projectName": "FileWatcherOrganizer",
+      "projectPath": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\FileWatcherOrganizer.csproj",
       "packagesPath": "C:\\Users\\Eron\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\obj\\",
       "projectStyle": "PackageReference",
