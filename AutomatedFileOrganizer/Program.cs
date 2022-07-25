@@ -73,8 +73,10 @@ void MoveFile(string watchFilePath, string organizedSubPath, string extension)
         fileName = $"{Path.GetFileNameWithoutExtension(organizedFilePath)}-{today.Minute}{today.Second}.{extension}";
         organizedFilePath = Path.Combine(fullPath, fileName);
     }
+    // Checks if file is still transferring or in used.
     while (IsFileLocked(watchFilePath) || IsFileLocked(organizedFilePath, true)) ;
     File.Move(watchFilePath, organizedFilePath);
+    // Logs file that was transferred/moved.
     File.AppendAllText("Log.csv", $"{today},{watchFilePath},{organizedFilePath},{Environment.NewLine}");
 }
 
