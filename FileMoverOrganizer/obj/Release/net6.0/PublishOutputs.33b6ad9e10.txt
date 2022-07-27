@@ -1,0 +1,5 @@
+C:\Users\Eron\Documents\Git\file-organizer\FileMoverOrganizer\bin\Release\net6.0\publish\FileMoverOrganizer.exe
+C:\Users\Eron\Documents\Git\file-organizer\FileMoverOrganizer\bin\Release\net6.0\publish\FileMoverOrganizer.dll
+C:\Users\Eron\Documents\Git\file-organizer\FileMoverOrganizer\bin\Release\net6.0\publish\FileMoverOrganizer.deps.json
+C:\Users\Eron\Documents\Git\file-organizer\FileMoverOrganizer\bin\Release\net6.0\publish\FileMoverOrganizer.runtimeconfig.json
+C:\Users\Eron\Documents\Git\file-organizer\FileMoverOrganizer\bin\Release\net6.0\publish\FileMoverOrganizer.pdb

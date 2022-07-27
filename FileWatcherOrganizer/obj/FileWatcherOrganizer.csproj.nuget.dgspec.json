@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\FileWatcherOrganizer.csproj": {}
+    "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileWatcherOrganizer\\FileWatcherOrganizer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\FileWatcherOrganizer.csproj": {
+    "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileWatcherOrganizer\\FileWatcherOrganizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\FileWatcherOrganizer.csproj",
+        "projectUniqueName": "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileWatcherOrganizer\\FileWatcherOrganizer.csproj",
         "projectName": "FileWatcherOrganizer",
-        "projectPath": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\FileWatcherOrganizer.csproj",
+        "projectPath": "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileWatcherOrganizer\\FileWatcherOrganizer.csproj",
         "packagesPath": "C:\\Users\\Eron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eron\\Documents\\Git\\File-Organizer\\AutomatedFileOrganizer\\obj\\",
+        "outputPath": "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileWatcherOrganizer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

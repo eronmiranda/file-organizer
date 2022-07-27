@@ -43,23 +43,23 @@ void OnCreated(object sender, FileSystemEventArgs e)
     if (organizedSubPaths.ContainsKey(extension.ToLower()))
     {
         MoveFile(watchFilePath, organizedSubPaths[extension.ToLower()], extension);
+        // Notifies if the file move was successful.
+        Console.WriteLine($"File has been moved to {organizedPath}");
     }
-    // Notifies if the file move was successful.
-    Console.WriteLine($"File has been moved to {organizedPath}");
 }
 
 void MoveFile(string watchFilePath, string organizedSubPath, string extension)
 {
-    DateTime today = DateTime.Now;
-    
+    FileInfo fileInfo = new FileInfo(watchFilePath);
+    DateTime dateTime = fileInfo.LastWriteTime;
+
     // Separated the date for readability.
-    string year = today.Year.ToString();
-    string month = today.ToString("MMMM");
-    string day = today.ToString("dd");
+    string year = dateTime.Year.ToString();
+    string month = dateTime.ToString("MMMM");
 
     string fileName = Path.GetFileName(watchFilePath);
     // Create a path name that separates the year, month, and day.
-    string subDatePath = $@"{organizedSubPath}\{year}\{month}\{day}\";
+    string subDatePath = $@"{organizedSubPath}\{year}\{month}\";
 
     // Combine the organized directory path and sub date paths.
     string fullPath = Path.Combine(organizedPath, subDatePath);
@@ -69,17 +69,18 @@ void MoveFile(string watchFilePath, string organizedSubPath, string extension)
     // file's organized directory path
     string organizedFilePath = Path.Combine(fullPath, fileName);
 
+
     // Check if it exists
     if (File.Exists(organizedFilePath))
     {
-        fileName = $"{Path.GetFileNameWithoutExtension(organizedFilePath)}-{today.Minute}{today.Second}.{extension}";
+        fileName = $"{Path.GetFileNameWithoutExtension(organizedFilePath)}-{DateTime.Now.Minute}{DateTime.Now.Second}.{extension}";
         organizedFilePath = Path.Combine(fullPath, fileName);
     }
     // Checks if file is still transferring or in used.
     while (IsFileLocked(watchFilePath) || IsFileLocked(organizedFilePath, true)) ;
     File.Move(watchFilePath, organizedFilePath);
     // Logs file that was transferred/moved.
-    File.AppendAllText("Log.csv", $"{today},{watchFilePath},{organizedFilePath},{Environment.NewLine}");
+    File.AppendAllText("Log.csv", $"{DateTime.Now},{watchFilePath},{organizedFilePath},{Environment.NewLine}");
 }
 
 bool IsFileLocked(string watchFilePath, bool del = false)
