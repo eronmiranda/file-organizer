@@ -46,6 +46,11 @@ void OnCreated(object sender, FileSystemEventArgs e)
         // Notifies if the file move was successful.
         Console.WriteLine($"File has been moved to {organizedPath}");
     }
+    else
+    {
+        MoveFile(watchFilePath, "Others", extension);
+        Console.WriteLine($"File has been moved to {organizedPath}/Others");
+    }
 }
 
 void MoveFile(string watchFilePath, string organizedSubPath, string extension)

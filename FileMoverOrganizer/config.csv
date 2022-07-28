@@ -1,5 +1,5 @@
-﻿WatchPath,G:\downloads
-OrgPath,G:\organized-downloads
+﻿SourcePath,G:\downloads
+DestinationPath,G:\moved-downloads
 txt,Word processor and text file
 zip,Compressed file
 7z,Compressed file
@@ -25,4 +25,4 @@ torrent,Torrent file
 sql,Data and Database file
 iso,Installer file
 epub,Ebook file
-exe, Installer file
+exe,Installer file
