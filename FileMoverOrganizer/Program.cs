@@ -24,7 +24,6 @@ void ProcessDirectory(string targetDirectory)
     foreach (string subdirectory in subdirectoryEntries)
     {
         MoveDirectory(subdirectory);
-        Console.WriteLine($@"Directory has been moved to {destinationPath}\Directories");
     }
 }
 
@@ -113,7 +112,9 @@ void MoveDirectory(string sourceDirectoryPath)
     {
         destinationDirectoryPath = $"{destinationDirectoryPath}-{DateTime.Now.Date.ToString("ddd")}-{DateTime.Now.Minute}-{DateTime.Now.Second}";
     }
+
     Directory.Move(sourceDirectoryPath, destinationDirectoryPath);
+    Console.WriteLine($@"Directory has been moved to {destinationDirectoryPath}");
     File.AppendAllText("Log.csv", $"{DateTime.Now},{sourceDirectoryPath},{destinationDirectoryPath},{Environment.NewLine}");
 }
 
