@@ -13,9 +13,9 @@ destinationPath = config[1].Split(',')[1];
 LoadExtensionSubPaths();
 
 if(Directory.Exists(sourcePath))
-{
     ProcessDirectory(sourcePath);
-}
+else
+    Console.WriteLine("Chosen directory does not exists! Change the config.csv file.");
 
 // End of main.
 
@@ -121,7 +121,8 @@ void MoveFile(string sourceFilePath, string organizedSubPath, string extension)
     }
 
     // Keeps on looping if the file is not ready yet.
-    while (IsFileLocked(sourceFilePath) || IsFileLocked(organizedFilePath, true));
+    while (IsFileLocked(sourceFilePath) || IsFileLocked(organizedFilePath, true))
+        Thread.Sleep(5000);
 
     // Actual moving of file.
     File.Move(sourceFilePath, organizedFilePath);
