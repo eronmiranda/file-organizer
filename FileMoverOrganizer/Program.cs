@@ -4,9 +4,12 @@ Dictionary<string, string> organizedSubPaths = new Dictionary<string, string>();
 
 string[] config = File.ReadAllLines("config.csv");
 
+// Gets the first row of the config file
 sourcePath = config[0].Split(',')[1];
+// Gets the second row of the config file
 destinationPath = config[1].Split(',')[1];
 
+// Gets the extension name and organized sub paths from config.
 LoadExtensionSubPaths();
 
 if(Directory.Exists(sourcePath))
@@ -14,19 +17,36 @@ if(Directory.Exists(sourcePath))
     ProcessDirectory(sourcePath);
 }
 
+// End of main.
+
+
+// Loads data from config file to dictionary: organizedSubPaths.
+// Dictionary < Extension Name, Sub Path > 
+void LoadExtensionSubPaths()
+{
+    // Starts on the 3rd row of the config file.
+    // First two rows are for source and destination path.
+    for (int i = 2; i < config.Length; i++)
+    {
+        string[] extensionAndSubPath = config[i].Split(",");
+        organizedSubPaths.Add(extensionAndSubPath[0], extensionAndSubPath[1]);
+    }
+}
+
+// targetDirectory = string path of the source that needs to be moved.
 void ProcessDirectory(string targetDirectory)
 {
+    // Gets all the files from the target/source path.
     string[] fileEntries = Directory.GetFiles(targetDirectory);
     foreach (string fileName in fileEntries)
         ProcessFiles(fileName);
 
+    // Gets all the directories from the target/source path.
     string[] subdirectoryEntries = Directory.GetDirectories(targetDirectory);
     foreach (string subdirectory in subdirectoryEntries)
-    {
         MoveDirectory(subdirectory);
-    }
 }
-
+// sourceFilePath = string path of source file that needs to be moved.
 void ProcessFiles(string sourceFilePath)
 {
     string extension = Path.GetExtension(sourceFilePath);
@@ -44,13 +64,28 @@ void ProcessFiles(string sourceFilePath)
     }
 }
 
-void LoadExtensionSubPaths()
+// Added this to prevent files of subdirectory from moving to different organized folders.
+void MoveDirectory(string sourceDirectoryPath)
 {
-    for (int i = 2; i < config.Length; i++)
+    string folderName = Path.GetFileName(sourceDirectoryPath);
+    // Creates a path name that stores all directories.
+    string subPath = @"Directories\";
+
+    // Combines the destination directory path and sub path.
+    string destinationDirectoryPath = Path.Combine(destinationPath, subPath);
+
+    Directory.CreateDirectory(destinationDirectoryPath);
+
+    destinationDirectoryPath = Path.Combine(destinationDirectoryPath, folderName);
+
+    if (Directory.Exists(destinationDirectoryPath))
     {
-        string[] extensionAndSubPath = config[i].Split(",");
-        organizedSubPaths.Add(extensionAndSubPath[0], extensionAndSubPath[1]);
+        destinationDirectoryPath = $"{destinationDirectoryPath}-{DateTime.Now.Date.ToString("ddd")}-{DateTime.Now.Minute}-{DateTime.Now.Second}";
     }
+
+    Directory.Move(sourceDirectoryPath, destinationDirectoryPath);
+    Console.WriteLine($@"Directory has been moved to {destinationDirectoryPath}");
+    File.AppendAllText("Log.csv", $"{DateTime.Now},{sourceDirectoryPath},{destinationDirectoryPath},{Environment.NewLine}");
 }
 
 void MoveFile(string sourceFilePath, string organizedSubPath, string extension)
@@ -75,7 +110,7 @@ void MoveFile(string sourceFilePath, string organizedSubPath, string extension)
 
     Directory.CreateDirectory(fullPath);
 
-    // file's organized directory path
+    // File's organized directory path
     string organizedFilePath = Path.Combine(fullPath, fileName);
 
     // Check if it exists
@@ -86,7 +121,7 @@ void MoveFile(string sourceFilePath, string organizedSubPath, string extension)
     }
 
     // Keeps on looping if the file is not ready yet.
-    while (IsFileLocked(sourceFilePath) || IsFileLocked(organizedFilePath, true)) ;
+    while (IsFileLocked(sourceFilePath) || IsFileLocked(organizedFilePath, true));
 
     // Actual moving of file.
     File.Move(sourceFilePath, organizedFilePath);
@@ -95,39 +130,16 @@ void MoveFile(string sourceFilePath, string organizedSubPath, string extension)
     File.AppendAllText("Log.csv", $"{DateTime.Now},{sourceFilePath},{organizedFilePath},{Environment.NewLine}");
 }
 
-void MoveDirectory(string sourceDirectoryPath)
-{
-    string folderName = Path.GetFileName(sourceDirectoryPath);
-    // Create a path name that stores all directories.
-    string subPath = @"Directories\";
-
-    // Combine the destination directory path and sub path.
-    string destinationDirectoryPath = Path.Combine(destinationPath, subPath);
-
-    Directory.CreateDirectory(destinationDirectoryPath);
-
-    destinationDirectoryPath = Path.Combine(destinationDirectoryPath, folderName);
-
-    if (Directory.Exists(destinationDirectoryPath))
-    {
-        destinationDirectoryPath = $"{destinationDirectoryPath}-{DateTime.Now.Date.ToString("ddd")}-{DateTime.Now.Minute}-{DateTime.Now.Second}";
-    }
-
-    Directory.Move(sourceDirectoryPath, destinationDirectoryPath);
-    Console.WriteLine($@"Directory has been moved to {destinationDirectoryPath}");
-    File.AppendAllText("Log.csv", $"{DateTime.Now},{sourceDirectoryPath},{destinationDirectoryPath},{Environment.NewLine}");
-}
-
 // Checks if file is still transferring or in used.
-bool IsFileLocked(string watchFilePath, bool del = false)
+bool IsFileLocked(string filePath, bool delete = false)
 {
     bool locked = false;
     try
     {
-        FileStream fs = File.Open(watchFilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
-        fs.Close();
-        if (del)
-            File.Delete(watchFilePath);
+        FileStream fileStream = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+        fileStream.Close();
+        if (delete)
+            File.Delete(filePath);
     }
     catch (Exception)
     {
