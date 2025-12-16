@@ -1,5 +1,0 @@
-C:\Users\Eron\Documents\Git\file-organizer\FileWatcherOrganizer\bin\Release\net6.0\publish\FileWatcherOrganizer.exe
-C:\Users\Eron\Documents\Git\file-organizer\FileWatcherOrganizer\bin\Release\net6.0\publish\FileWatcherOrganizer.dll
-C:\Users\Eron\Documents\Git\file-organizer\FileWatcherOrganizer\bin\Release\net6.0\publish\FileWatcherOrganizer.deps.json
-C:\Users\Eron\Documents\Git\file-organizer\FileWatcherOrganizer\bin\Release\net6.0\publish\FileWatcherOrganizer.runtimeconfig.json
-C:\Users\Eron\Documents\Git\file-organizer\FileWatcherOrganizer\bin\Release\net6.0\publish\FileWatcherOrganizer.pdb

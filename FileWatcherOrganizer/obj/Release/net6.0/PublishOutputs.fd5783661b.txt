@@ -1,5 +1,0 @@
-G:\FileWatcherOrganizer\FileWatcherOrganizer.exe
-G:\FileWatcherOrganizer\FileWatcherOrganizer.dll
-G:\FileWatcherOrganizer\FileWatcherOrganizer.deps.json
-G:\FileWatcherOrganizer\FileWatcherOrganizer.runtimeconfig.json
-G:\FileWatcherOrganizer\FileWatcherOrganizer.pdb
