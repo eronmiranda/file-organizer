@@ -1,36 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileMoverOrganizer\\FileMoverOrganizer.csproj": {}
+    "/Users/eron/src/github/file-organizer/FileMoverOrganizer/FileMoverOrganizer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileMoverOrganizer\\FileMoverOrganizer.csproj": {
+    "/Users/eron/src/github/file-organizer/FileMoverOrganizer/FileMoverOrganizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileMoverOrganizer\\FileMoverOrganizer.csproj",
+        "projectUniqueName": "/Users/eron/src/github/file-organizer/FileMoverOrganizer/FileMoverOrganizer.csproj",
         "projectName": "FileMoverOrganizer",
-        "projectPath": "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileMoverOrganizer\\FileMoverOrganizer.csproj",
-        "packagesPath": "C:\\Users\\Eron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileMoverOrganizer\\obj\\",
+        "projectPath": "/Users/eron/src/github/file-organizer/FileMoverOrganizer/FileMoverOrganizer.csproj",
+        "packagesPath": "/Users/eron/.nuget/packages/",
+        "outputPath": "/Users/eron/src/github/file-organizer/FileMoverOrganizer/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Eron\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/eron/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -41,15 +35,16 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet@8/8.0.122/libexec/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

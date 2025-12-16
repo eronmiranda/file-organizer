@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VzvPyvB4hB6gQ1ymFcZ4sjN6L/B8Lvx0TmrLvzBJ1Unh0A+ifmdLD/6XTeFVUcn5uc/H3y5jWg7cGos3l7xV8Q==",
+  "dgSpecHash": "Fmu9aaLE4pdpGsGhE0NGtwNt5sHQPL5iNboVdEvuKh//fgnNhAEzj9quhZyjojLETt2LEv4BdUkdIbXN6DEAAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eron\\Documents\\Git\\file-organizer\\FileMoverOrganizer\\FileMoverOrganizer.csproj",
+  "projectFilePath": "/Users/eron/src/github/file-organizer/FileMoverOrganizer/FileMoverOrganizer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
